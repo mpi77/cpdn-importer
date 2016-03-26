@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF8"?>
+
+<schema xsi:schemaLocation="http://xes.sd2.cz/1.0/xes10.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" xmlns="http://xes.sd2.cz/1.0">
+
+	<info>
+		<author>Martin Bures</author>
+		<description>Test purpose only</description>
+		<name>TEST_SCHEME</name>
+		<version>1</version>
+	</info>
+
+	<nodes>
+		<consumption id="1">
+			<label>ROZV_1_110</label>
+			<map>
+				<x>1000</x>
+				<y>100</y>
+			</map>
+			<spec>
+				<power>
+					<active>0.0</active>
+					<installed>0.0</installed>
+					<reactive>0.0</reactive>
+				</power>
+				<voltage>
+					<level>110000</level>
+					<value>0.0</value>
+				</voltage>
+			</spec>
+		</consumption>
+
+		<consumption id="2">
+			<label>TR_ROZV_2</label>
+			<map>
+				<x>400</x>
+				<y>500</y>
+			</map>
+			<spec>
+				<power>
+					<active>0.0</active>
+					<installed>0.0</installed>
+					<reactive>0.0</reactive>
+				</power>
+				<voltage>
+					<level>110000</level>
+					<value>0.0</value>
+				</voltage>
+			</spec>
+		</consumption>
+		
+		<consumption id="3">
+			<label>RK_ROZV_3</label>
+			<map>
+				<x>1600</x>
+				<y>500</y>
+			</map>
+			<spec>
+				<power>
+					<active>0.0</active>
+					<installed>0.0</installed>
+					<reactive>0.0</reactive>
+				</power>
+				<voltage>
+					<level>110000</level>
+					<value>0.0</value>
+				</voltage>
+			</spec>
+		</consumption>
+		
+		<turbogen id="4">
+			<label>GEN_ROZV_2</label>
+			<map>
+				<x>400</x>
+				<y>900</y>
+			</map>
+			<spec>
+				<power>
+					<active>0.0</active>
+					<installed>100000000</installed>
+					<reactive>0.0</reactive>
+				</power>
+				<voltage>
+					<level>13800</level>
+					<value>13800</value>
+				</voltage>
+				<reactance>
+					<lang>15,0</lang>
+					<long>0,0</long>
+				</reactance>
+			</spec>
+		</turbogen>
+
+		<consumption id="5">
+			<label>ODB_ROZV_3</label>
+			<map>
+				<x>1600</x>
+				<y>900</y>
+			</map>
+			<spec>
+				<power>
+					<active>10000000</active>
+					<installed>0.0</installed>
+					<reactive>5000000</reactive>
+				</power>
+				<voltage>
+					<level>22000</level>
+					<value>0.0</value>
+				</voltage>
+			</spec>
+		</consumption>
+	</nodes>
+
+	<sections>
+		<line id="1">
+			<node-dst>2</node-dst>
+			<node-src>1</node-src>
+			<spec>
+				<conductance>0.0</conductance>
+				<current>
+					<max>0.0</max>
+				</current>
+				<reactance>
+					<ratio>0.0</ratio>
+					<value>6.0</value>
+				</reactance>
+				<resistance>
+					<ratio>0.0</ratio>
+					<value>0.4</value>
+				</resistance>
+				<susceptance>150.0</susceptance>
+			</spec>
+		</line>
+
+		<line id="2">
+			<node-dst>3</node-dst>
+			<node-src>2</node-src>
+			<spec>
+				<conductance>0.0</conductance>
+				<current>
+					<max>10000.0</max>
+				</current>
+				<reactance>
+					<ratio>0.0</ratio>
+					<value>4.0</value>
+				</reactance>
+				<resistance>
+					<ratio>0.0</ratio>
+					<value>0.2</value>
+				</resistance>
+				<susceptance>100.0</susceptance>
+			</spec>
+		</line>
+		
+		<line id="3">
+			<node-dst>1</node-dst>
+			<node-src>3</node-src>
+			<spec>
+				<conductance>0.0</conductance>
+				<current>
+					<max>10000.0</max>
+				</current>
+				<reactance>
+					<ratio>0.0</ratio>
+					<value>8.0</value>
+				</reactance>
+				<resistance>
+					<ratio>0.0</ratio>
+					<value>0.4</value>
+				</resistance>
+				<susceptance>200.0</susceptance>
+			</spec>
+		</line>
+
+		<transformer id="4">
+			<node-dst>4</node-dst>
+			<node-src>2</node-src>
+			<spec>
+				<current>
+					<max>10000.0</max>
+					<noload>11.0</noload>
+				</current>
+				<losses>
+					<noload>15.0</noload>
+					<short>1.0</short>
+				</losses>
+				<power>
+					<rated>10.0</rated>
+				</power>
+				<voltage>
+					<short>15.0</short>
+					<primary>
+						<rated>110000.0</rated>
+						<actual>121000.0</actual>
+					</primary>
+					<secondary>
+						<rated>13800.0</rated>
+						<actual>13800.0</actual>
+					</secondary>
+					<noload>10.0</noload>
+				</voltage>
+			</spec>
+		</transformer>
+
+		<transformer id="5">
+			<node-dst>5</node-dst>
+			<node-src>3</node-src>
+			<spec>
+				<current>
+					<max>10000.0</max>
+					<noload>11.0</noload>
+				</current>
+				<losses>
+					<noload>15.0</noload>
+					<short>1.0</short>
+				</losses>
+				<power>
+					<rated>25000000</rated>
+				</power>
+				<voltage>
+					<short>10.0</short>
+					<primary>
+						<rated>110000.0</rated>
+						<actual>110000.0</actual>
+					</primary>
+					<secondary>
+						<rated>22000.0</rated>
+						<actual>23000.0</actual>
+					</secondary>
+					<noload>15.0</noload>
+				</voltage>
+			</spec>
+		</transformer>
+	</sections>
+
+</schema>
